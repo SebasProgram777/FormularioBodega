@@ -6,18 +6,10 @@ package formulariofinogestionbodega;
 
 /**
  *
-<<<<<<< HEAD
  * @author marco
  */
 public class Pantalla5GestionBodegas extends javax.swing.JFrame {
 
-=======
- * @author Marco_Antonio
- */
-public class Pantalla5GestionBodegas extends javax.swing.JFrame {
-    
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Pantalla5GestionBodegas.class.getName());
->>>>>>> 2eecc93 (Subida inicial del proyecto FormularioBodega)
     /**
      * Creates new form Pantalla5GestionBodegas
      */
@@ -34,168 +26,137 @@ public class Pantalla5GestionBodegas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<<<<<<< HEAD
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-=======
-        botonIngresar = new javax.swing.JButton();
-        botonVerInventario = new javax.swing.JButton();
-        botonActualizar = new javax.swing.JButton();
-        botonEliminar = new javax.swing.JButton();
-        botonConsultar = new javax.swing.JButton();
-        botonRegresar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        labelTitulo = new javax.swing.JLabel();
+        botonP1Ingreso = new javax.swing.JButton();
+        botonP2Ver = new javax.swing.JButton();
+        botonP3Actualizar = new javax.swing.JButton();
+        botonP4Eliminar = new javax.swing.JButton();
+        botonP5Consultar = new javax.swing.JButton();
+        botonSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        botonIngresar.setText("Ingresar Producto");
-        botonIngresar.setToolTipText("");
-        botonIngresar.addActionListener(new java.awt.event.ActionListener() {
+        labelTitulo.setText("\"Menú Principal - Gestión de Bodega\"");
+
+        botonP1Ingreso.setText("\"Ingresar Producto\"");
+        botonP1Ingreso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonIngresarActionPerformed(evt);
+                botonP1IngresoActionPerformed(evt);
             }
         });
 
-        botonVerInventario.setText("Ver Inventario");
-        botonVerInventario.addActionListener(new java.awt.event.ActionListener() {
+        botonP2Ver.setText("\"Ver Inventario\"\t");
+        botonP2Ver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonVerInventarioActionPerformed(evt);
+                botonP2VerActionPerformed(evt);
             }
         });
 
-        botonActualizar.setText("Actualizar Producto");
-        botonActualizar.addActionListener(new java.awt.event.ActionListener() {
+        botonP3Actualizar.setText("\"Actualizar Producto\"");
+        botonP3Actualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonActualizarActionPerformed(evt);
+                botonP3ActualizarActionPerformed(evt);
             }
         });
 
-        botonEliminar.setText("Eliminar Producto");
-        botonEliminar.addActionListener(new java.awt.event.ActionListener() {
+        botonP4Eliminar.setText("\"Eliminar Producto\"\t");
+        botonP4Eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEliminarActionPerformed(evt);
+                botonP4EliminarActionPerformed(evt);
             }
         });
 
-        botonConsultar.setText("Consultar Producto");
-        botonConsultar.addActionListener(new java.awt.event.ActionListener() {
+        botonP5Consultar.setText("\"Consultar Producto\"\t");
+        botonP5Consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonConsultarActionPerformed(evt);
+                botonP5ConsultarActionPerformed(evt);
             }
         });
 
-        botonRegresar.setText("Regresar");
-        botonRegresar.addActionListener(new java.awt.event.ActionListener() {
+        botonSalir.setText("\"Salir\"\t");
+        botonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonRegresarActionPerformed(evt);
+                botonSalirActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("GESTION DE BODEGA");
-        jLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 255)));
-
->>>>>>> 2eecc93 (Subida inicial del proyecto FormularioBodega)
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
-
-=======
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(144, 144, 144)
+                        .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(botonConsultar)
-                            .addComponent(botonEliminar)
-                            .addComponent(botonActualizar)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(botonP4Eliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonP3Actualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonP1Ingreso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonP2Ver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonP5Consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(botonSalir)
+                                .addGap(34, 34, 34))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(botonVerInventario))
-                            .addComponent(botonIngresar))))
-                .addContainerGap(122, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(botonRegresar)
-                .addGap(154, 154, 154))
+                        .addGap(15, 15, 15)
+                        .addComponent(labelTitulo)))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(16, 16, 16)
-                .addComponent(botonIngresar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botonVerInventario)
+                .addGap(22, 22, 22)
+                .addComponent(labelTitulo)
+                .addGap(18, 18, 18)
+                .addComponent(botonP1Ingreso)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonActualizar)
+                .addComponent(botonP2Ver)
+                .addGap(18, 18, 18)
+                .addComponent(botonP3Actualizar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botonEliminar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botonConsultar)
-                .addGap(42, 42, 42)
-                .addComponent(botonRegresar)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addComponent(botonP4Eliminar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonP5Consultar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botonSalir)
+                .addGap(65, 65, 65))
         );
-
-        botonIngresar.getAccessibleContext().setAccessibleName("botonIngresar");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIngresarActionPerformed
-        PantallaP1IngresoProducto p1 = new PantallaP1IngresoProducto();
-        p1.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_botonIngresarActionPerformed
+    private void botonP3ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonP3ActualizarActionPerformed
+        new PantallaP3ActualizarProducto().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_botonP3ActualizarActionPerformed
 
-    private void botonVerInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerInventarioActionPerformed
-        PantallaP2VerInventario p2 = new PantallaP2VerInventario();
-        p2.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_botonVerInventarioActionPerformed
+    private void botonP1IngresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonP1IngresoActionPerformed
+        new PantallaP1IngresoProducto().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_botonP1IngresoActionPerformed
 
-    private void botonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarActionPerformed
-        PantallaP3ActualizarProducto p3 = new PantallaP3ActualizarProducto();
-        p3.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_botonActualizarActionPerformed
+    private void botonP2VerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonP2VerActionPerformed
+        new PantallaP2VerInventario().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_botonP2VerActionPerformed
 
-    private void botonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarActionPerformed
-        PantallaP4EliminarProducto p4 = new PantallaP4EliminarProducto();
-        p4.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_botonEliminarActionPerformed
+    private void botonP4EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonP4EliminarActionPerformed
+        new PantallaP4EliminarProducto().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_botonP4EliminarActionPerformed
 
-    private void botonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConsultarActionPerformed
-        PantallaP5ConsultarProducto p5 = new PantallaP5ConsultarProducto();
-        p5.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_botonConsultarActionPerformed
+    private void botonP5ConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonP5ConsultarActionPerformed
+        new PantallaP5ConsultarProducto().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_botonP5ConsultarActionPerformed
 
-    private void botonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarActionPerformed
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
         Pantalla3Funciones volver = new Pantalla3Funciones();
         volver.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_botonRegresarActionPerformed
+    }//GEN-LAST:event_botonSalirActionPerformed
 
->>>>>>> 2eecc93 (Subida inicial del proyecto FormularioBodega)
     /**
      * @param args the command line arguments
      */
@@ -212,7 +173,6 @@ public class Pantalla5GestionBodegas extends javax.swing.JFrame {
                     break;
                 }
             }
-<<<<<<< HEAD
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(Pantalla5GestionBodegas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
@@ -221,15 +181,10 @@ public class Pantalla5GestionBodegas extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Pantalla5GestionBodegas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Pantalla5GestionBodegas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-=======
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
->>>>>>> 2eecc93 (Subida inicial del proyecto FormularioBodega)
         }
         //</editor-fold>
 
         /* Create and display the form */
-<<<<<<< HEAD
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Pantalla5GestionBodegas().setVisible(true);
@@ -238,18 +193,12 @@ public class Pantalla5GestionBodegas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-=======
-        java.awt.EventQueue.invokeLater(() -> new Pantalla5GestionBodegas().setVisible(true));
-    }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonActualizar;
-    private javax.swing.JButton botonConsultar;
-    private javax.swing.JButton botonEliminar;
-    private javax.swing.JButton botonIngresar;
-    private javax.swing.JButton botonRegresar;
-    private javax.swing.JButton botonVerInventario;
-    private javax.swing.JLabel jLabel1;
->>>>>>> 2eecc93 (Subida inicial del proyecto FormularioBodega)
+    private javax.swing.JButton botonP1Ingreso;
+    private javax.swing.JButton botonP2Ver;
+    private javax.swing.JButton botonP3Actualizar;
+    private javax.swing.JButton botonP4Eliminar;
+    private javax.swing.JButton botonP5Consultar;
+    private javax.swing.JButton botonSalir;
+    private javax.swing.JLabel labelTitulo;
     // End of variables declaration//GEN-END:variables
 }

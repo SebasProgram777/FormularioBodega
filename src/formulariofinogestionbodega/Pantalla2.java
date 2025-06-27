@@ -146,49 +146,44 @@ public class Pantalla2 extends javax.swing.JFrame {
     }//GEN-LAST:event_usuarioiniciaActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-       String usuarioIngresado = usuarioinicia.getText().trim();
-        String contraseñaIngresada = usuariocontraseña.getText().trim();
-        
-        // Llamar a la función para verificar si el usuario y la contraseña coinciden con los registrados
-        if (validarCredenciales(usuarioIngresado, contraseñaIngresada)) {
-            // Si las credenciales son correctas, ir a la pantalla 3
-            Pantalla3Funciones newframe = new Pantalla3Funciones();    
-            newframe.setVisible(true);
-            this.dispose(); 
+        String usuario = usuarioinicia.getText().trim();
+        String clave = usuariocontraseña.getText().trim();
+
+        if (usuario.isEmpty() || clave.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingrese usuario y contraseña.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        if (validarCredenciales(usuario, clave)) {
+            Pantalla3Funciones nuevaVentana = new Pantalla3Funciones();
+            nuevaVentana.setVisible(true);
+            this.dispose();
         } else {
-            // Si no coinciden, mostrar un mensaje de error
-            JOptionPane.showMessageDialog(this, "Usuario y/o contraseña incorrectos", "Error de inicio de sesión", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Credenciales incorrectas.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }                                        
 
     private boolean validarCredenciales(String usuario, String contraseña) {
-        try {
-            // Leer el archivo de usuarios registrados
-            BufferedReader br = new BufferedReader(new FileReader("usuarios_ejemplo.txt"));
-            String line;
-            
-            while ((line = br.readLine()) != null) {
-                // Dividir la línea en usuario y contraseña
-                String[] usuarioYContraseña = line.split(",");
-                String usuarioGuardado = usuarioYContraseña[0].trim();
-                String contraseñaGuardada = usuarioYContraseña[1].trim();
-                
-                // Verificar si el usuario y la contraseña coinciden
-                if (usuario.equals(usuarioGuardado) && contraseña.equals(contraseñaGuardada)) {
-                    br.close(); // Cerrar el BufferedReader cuando las credenciales sean correctas
-                    return true; // Si las credenciales coinciden
+        try (BufferedReader reader = new BufferedReader(new FileReader("usuarios_ejemplo.txt"))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                String[] partes = linea.split(",");
+
+                if (partes.length == 2) {
+                    String usuarioArchivo = partes[0].trim();
+                    String claveArchivo = partes[1].trim();
+
+                    if (usuarioArchivo.equals(usuario) && claveArchivo.equals(contraseña)) {
+                        return true;
+                    }
+                } else {
+                    System.err.println("Línea malformada: " + linea);
                 }
             }
-            br.close();  // Cerrar el BufferedReader después del ciclo while
-
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "Error al leer el archivo de usuarios", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Error al leer el archivo de usuarios.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-
-        // Si no se encuentra una coincidencia, devolver falso
         return false;
-    
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
