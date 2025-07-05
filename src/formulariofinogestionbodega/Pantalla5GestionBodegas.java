@@ -33,40 +33,43 @@ public class Pantalla5GestionBodegas extends javax.swing.JFrame {
         botonP4Eliminar = new javax.swing.JButton();
         botonP5Consultar = new javax.swing.JButton();
         botonSalir = new javax.swing.JButton();
+        btnP6AumentarStock = new javax.swing.JButton();
+        btnP7ReducirStock = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        labelTitulo.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         labelTitulo.setText("\"Menú Principal - Gestión de Bodega\"");
 
-        botonP1Ingreso.setText("\"Ingresar Producto\"");
+        botonP1Ingreso.setText("Ingresar Producto");
         botonP1Ingreso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonP1IngresoActionPerformed(evt);
             }
         });
 
-        botonP2Ver.setText("\"Ver Inventario\"\t");
+        botonP2Ver.setText("Ver Inventario");
         botonP2Ver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonP2VerActionPerformed(evt);
             }
         });
 
-        botonP3Actualizar.setText("\"Actualizar Producto\"");
+        botonP3Actualizar.setText("Actualizar Producto");
         botonP3Actualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonP3ActualizarActionPerformed(evt);
             }
         });
 
-        botonP4Eliminar.setText("\"Eliminar Producto\"\t");
+        botonP4Eliminar.setText("Eliminar Producto");
         botonP4Eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonP4EliminarActionPerformed(evt);
             }
         });
 
-        botonP5Consultar.setText("\"Consultar Producto\"\t");
+        botonP5Consultar.setText("Consultar Producto");
         botonP5Consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonP5ConsultarActionPerformed(evt);
@@ -80,6 +83,20 @@ public class Pantalla5GestionBodegas extends javax.swing.JFrame {
             }
         });
 
+        btnP6AumentarStock.setText("Aumentar Stock");
+        btnP6AumentarStock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnP6AumentarStockActionPerformed(evt);
+            }
+        });
+
+        btnP7ReducirStock.setText("Reducir Stock");
+        btnP7ReducirStock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnP7ReducirStockActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,21 +104,22 @@ public class Pantalla5GestionBodegas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(botonP4Eliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(botonP3Actualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(botonP1Ingreso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(botonP2Ver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(botonP5Consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(botonSalir)
-                                .addGap(34, 34, 34))))
+                        .addGap(163, 163, 163)
+                        .addComponent(botonSalir))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(labelTitulo)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                        .addGap(75, 75, 75)
+                        .addComponent(labelTitulo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(123, 123, 123)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(botonP2Ver, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                            .addComponent(botonP1Ingreso, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                            .addComponent(botonP4Eliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                            .addComponent(botonP3Actualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botonP5Consultar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnP6AumentarStock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnP7ReducirStock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,15 +130,19 @@ public class Pantalla5GestionBodegas extends javax.swing.JFrame {
                 .addComponent(botonP1Ingreso)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonP2Ver)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonP3Actualizar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonP4Eliminar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonP5Consultar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnP6AumentarStock)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnP7ReducirStock)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addComponent(botonSalir)
-                .addGap(65, 65, 65))
+                .addContainerGap())
         );
 
         pack();
@@ -156,6 +178,16 @@ public class Pantalla5GestionBodegas extends javax.swing.JFrame {
         volver.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botonSalirActionPerformed
+
+    private void btnP6AumentarStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnP6AumentarStockActionPerformed
+        new PantallaP6AumentarStock().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnP6AumentarStockActionPerformed
+
+    private void btnP7ReducirStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnP7ReducirStockActionPerformed
+        new PantallaP7ReducirStock().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnP7ReducirStockActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,6 +231,8 @@ public class Pantalla5GestionBodegas extends javax.swing.JFrame {
     private javax.swing.JButton botonP4Eliminar;
     private javax.swing.JButton botonP5Consultar;
     private javax.swing.JButton botonSalir;
+    private javax.swing.JButton btnP6AumentarStock;
+    private javax.swing.JButton btnP7ReducirStock;
     private javax.swing.JLabel labelTitulo;
     // End of variables declaration//GEN-END:variables
 }

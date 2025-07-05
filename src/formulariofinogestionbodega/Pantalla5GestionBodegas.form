@@ -26,27 +26,27 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="botonP4Eliminar" max="32767" attributes="0"/>
-                              <Component id="botonP3Actualizar" alignment="1" max="32767" attributes="0"/>
-                              <Component id="botonP1Ingreso" alignment="1" max="32767" attributes="0"/>
-                              <Component id="botonP2Ver" alignment="1" max="32767" attributes="0"/>
-                              <Component id="botonP5Consultar" min="-2" pref="144" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="botonSalir" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
+                      <Component id="botonSalir" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                       <Component id="labelTitulo" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="botonP2Ver" pref="148" max="32767" attributes="0"/>
+                          <Component id="botonP1Ingreso" pref="148" max="32767" attributes="0"/>
+                          <Component id="botonP4Eliminar" alignment="0" pref="148" max="32767" attributes="0"/>
+                          <Component id="botonP3Actualizar" alignment="0" max="32767" attributes="0"/>
+                          <Component id="botonP5Consultar" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnP6AumentarStock" max="32767" attributes="0"/>
+                          <Component id="btnP7ReducirStock" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
-              <EmptySpace pref="18" max="32767" attributes="0"/>
+              <EmptySpace pref="90" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -59,15 +59,19 @@
               <Component id="botonP1Ingreso" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="botonP2Ver" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="botonP3Actualizar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="botonP4Eliminar" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="botonP5Consultar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="btnP6AumentarStock" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="btnP7ReducirStock" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="88" max="32767" attributes="0"/>
               <Component id="botonSalir" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -75,12 +79,15 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="labelTitulo">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="2"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="&quot;Men&#xfa; Principal - Gesti&#xf3;n de Bodega&quot;"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="botonP1Ingreso">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&quot;Ingresar Producto&quot;"/>
+        <Property name="text" type="java.lang.String" value="Ingresar Producto"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonP1IngresoActionPerformed"/>
@@ -88,7 +95,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="botonP2Ver">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&quot;Ver Inventario&quot;&#x9;"/>
+        <Property name="text" type="java.lang.String" value="Ver Inventario"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonP2VerActionPerformed"/>
@@ -96,7 +103,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="botonP3Actualizar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&quot;Actualizar Producto&quot;"/>
+        <Property name="text" type="java.lang.String" value="Actualizar Producto"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonP3ActualizarActionPerformed"/>
@@ -104,7 +111,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="botonP4Eliminar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&quot;Eliminar Producto&quot;&#x9;"/>
+        <Property name="text" type="java.lang.String" value="Eliminar Producto"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonP4EliminarActionPerformed"/>
@@ -112,7 +119,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="botonP5Consultar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&quot;Consultar Producto&quot;&#x9;"/>
+        <Property name="text" type="java.lang.String" value="Consultar Producto"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonP5ConsultarActionPerformed"/>
@@ -124,6 +131,22 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonSalirActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnP6AumentarStock">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Aumentar Stock"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnP6AumentarStockActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnP7ReducirStock">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Reducir Stock"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnP7ReducirStockActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
