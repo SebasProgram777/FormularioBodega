@@ -45,6 +45,7 @@ public class PantallaP5ConsultarProducto extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("CONSULTAR PRODUCTO ");
 
         etiquetaCodigo.setText("Código del producto:");
@@ -54,6 +55,12 @@ public class PantallaP5ConsultarProducto extends javax.swing.JFrame {
         labelCantidad.setText("Cantidad:");
 
         labelPrecio.setText("Precio:");
+
+        campoBuscarCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoBuscarCodigoActionPerformed(evt);
+            }
+        });
 
         botonBuscar.setText("Buscar");
         botonBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -80,37 +87,35 @@ public class PantallaP5ConsultarProducto extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(etiquetaCodigo)
+                    .addComponent(labelCantidad)
+                    .addComponent(labelNombre)
+                    .addComponent(labelPrecio))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(campoBuscarCodigo)
+                    .addComponent(campoNombre)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(etiquetaCodigo)
-                            .addComponent(labelCantidad)
-                            .addComponent(labelNombre)
-                            .addComponent(labelPrecio))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campoBuscarCodigo)
-                            .addComponent(campoNombre)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(botonVolver)
-                                .addGap(0, 25, Short.MAX_VALUE))
-                            .addComponent(campoCantidad)
-                            .addComponent(campoPrecio))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonBuscar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(botonVolver)
+                        .addGap(0, 25, Short.MAX_VALUE))
+                    .addComponent(campoCantidad)
+                    .addComponent(campoPrecio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonBuscar)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(96, 96, 96))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(23, 23, 23)
                 .addComponent(jLabel1)
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(etiquetaCodigo)
                     .addComponent(campoBuscarCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -174,6 +179,10 @@ public class PantallaP5ConsultarProducto extends javax.swing.JFrame {
         volver.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botonVolverActionPerformed
+
+    private void campoBuscarCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoBuscarCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoBuscarCodigoActionPerformed
 
     /**
      * @param args the command line arguments
