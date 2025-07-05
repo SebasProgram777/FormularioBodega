@@ -3,6 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package formulariofinogestionbodega;
+import javax.swing.JOptionPane;
+import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  *
@@ -27,26 +34,31 @@ public class PantallaP6AumentarStock extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnVolverGBodega = new javax.swing.JButton();
+        btnGuardarAumentoStock = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        txtfldCodigoProducto = new javax.swing.JTextField();
+        txtfldCantidad = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel1.setText("Aumentar Stock");
 
-        jButton1.setText("Volver");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnVolverGBodega.setText("Volver");
+        btnVolverGBodega.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnVolverGBodegaActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Guardar");
+        btnGuardarAumentoStock.setText("Guardar");
+        btnGuardarAumentoStock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarAumentoStockActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Cantidad");
 
@@ -60,9 +72,9 @@ public class PantallaP6AumentarStock extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton1)
+                        .addComponent(btnVolverGBodega)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2))
+                        .addComponent(btnGuardarAumentoStock))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -72,8 +84,8 @@ public class PantallaP6AumentarStock extends javax.swing.JFrame {
                                     .addComponent(jLabel2))
                                 .addGap(44, 44, 44)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField1)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtfldCodigoProducto)
+                                    .addComponent(txtfldCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(119, 119, 119)
                                 .addComponent(jLabel1)))
@@ -88,24 +100,103 @@ public class PantallaP6AumentarStock extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtfldCodigoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtfldCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnVolverGBodega)
+                    .addComponent(btnGuardarAumentoStock))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnVolverGBodegaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverGBodegaActionPerformed
+        Pantalla5GestionBodegas pGestion = new Pantalla5GestionBodegas();
+        pGestion.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnVolverGBodegaActionPerformed
+
+    private void btnGuardarAumentoStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarAumentoStockActionPerformed
+        String codigoBuscado = txtfldCodigoProducto.getText().trim();
+        String cantidadTexto = txtfldCantidad.getText().trim();
+        
+        //Verificamos que el codigo no se encuentre vacio
+        if(codigoBuscado.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Ingrese un código de producto.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Verificar que la cantidad sea un número entero válido y positivo
+        int cantidadNueva;
+        try {
+            cantidadNueva = Integer.parseInt(cantidadTexto);
+            if (cantidadNueva <= 0) {
+                throw new NumberFormatException();
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Cantidad no válida.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        // Archivos para actualizar
+        File archivo = new File("productos.txt");
+        File tempArchivo = new File("productos_temp.txt");
+
+        boolean encontrado = false;
+
+        try (
+            BufferedReader reader = new BufferedReader(new FileReader(archivo));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(tempArchivo))
+        ) {
+            String linea;
+
+            while ((linea = reader.readLine()) != null) {
+                String[] datos = linea.split(",");
+
+                if (datos.length == 4 && datos[1].equals(codigoBuscado)) {
+                    // Actualizar cantidad
+                    int cantidadExistente = Integer.parseInt(datos[2]);
+                    int nuevaCantidad = cantidadExistente + cantidadNueva;
+                    datos[2] = String.valueOf(nuevaCantidad);
+
+                    String nuevaLinea = String.join(",", datos);
+                    writer.write(nuevaLinea);
+                    writer.newLine();
+                    encontrado = true;
+                } else {
+                    // Copiar sin cambios
+                    writer.write(linea);
+                    writer.newLine();
+                }
+            }
+
+            if (!encontrado) {
+                JOptionPane.showMessageDialog(this, "Código inexistente.", "Error", JOptionPane.ERROR_MESSAGE);
+                tempArchivo.delete(); // eliminar temporal si no se usa
+                return;
+            }
+
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error al leer o escribir el archivo.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Reemplazar archivo original con el actualizado
+        if (!archivo.delete() || !tempArchivo.renameTo(archivo)) {
+            JOptionPane.showMessageDialog(this, "Error al actualizar el archivo.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        JOptionPane.showMessageDialog(this, "Stock actualizado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+
+        // Limpiar campos del formulario
+        txtfldCodigoProducto.setText("");
+        txtfldCantidad.setText("");
+    }//GEN-LAST:event_btnGuardarAumentoStockActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,12 +234,12 @@ public class PantallaP6AumentarStock extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnGuardarAumentoStock;
+    private javax.swing.JButton btnVolverGBodega;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField txtfldCantidad;
+    private javax.swing.JTextField txtfldCodigoProducto;
     // End of variables declaration//GEN-END:variables
 }
